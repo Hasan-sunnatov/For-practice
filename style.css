@@ -1,0 +1,101 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap");
+.card__text {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 90px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  word-spacing: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0px;
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    color-stop(0, #adfbda),
+    color-stop(30%, #35c3ff),
+    color-stop(50%, #fda399),
+    color-stop(70%, #76d880),
+    color-stop(90%, #ebf38b),
+    to(#adfbda)
+  );
+  background-image: -o-linear-gradient(
+    right,
+    #adfbda 0,
+    #35c3ff 30%,
+    #fda399 50%,
+    #76d880 70%,
+    #ebf38b 90%,
+    #adfbda 100%
+  );
+  background-image: linear-gradient(
+    -90deg,
+    #adfbda 0,
+    #35c3ff 30%,
+    #fda399 50%,
+    #76d880 70%,
+    #ebf38b 90%,
+    #adfbda 100%
+  );
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-size: 100%;
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f0f0f;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  justify-content: center;
+  width: max-content;
+  margin: 50px auto;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.cards:hover,
+.cards:focus {
+  grid-template-columns: repeat(10, 100px);
+  transition-delay: 0s;
+}
+.card {
+  border: 5px solid white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.card:hover,
+.card:focus {
+  z-index: 2;
+  transform: scale(2);
+}
+.cards:hover > .card:not(:hover) {
+  filter: blur(3px);
+}
+.card:hover + .card,
+.card:has(+ .card:hover) {
+  transition-delay: 0.2s;
+  transform: scale(1.5);
+  border-color: rgb(51, 255, 0);
+  filter: blur(0px) !important;
+}
